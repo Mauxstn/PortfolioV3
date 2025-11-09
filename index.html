@@ -105,7 +105,7 @@
               <div class="flex items-baseline gap-8">
                 <span class="text-white/40 text-xl font-medium w-16">01</span>
                 <div>
-                  <a href="#" class="block text-5xl md:text-6xl lg:text-7xl tracking-tight text-white/90 group-hover:text-white transition-colors font-['Inter']">Interface Design</a>
+                  <a href="#" class="block text-4xl md:text-5xl lg:text-6xl tracking-tight text-white/90 group-hover:text-white transition-colors">Lumina Design</a>
                   <div class="mt-3 flex flex-wrap gap-2 text-xs text-[#9d9d9d]">
                     <span class="px-3 py-1 rounded-full border border-white/10">UI/UX</span>
                     <span class="px-3 py-1 rounded-full border border-white/10">Figma</span>
@@ -113,13 +113,55 @@
                   </div>
                 </div>
               </div>
-              <span class="hidden sm:flex items-center justify-center text-4xl text-white/40 hover:text-white transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
             </div>
-            <!-- Preview -->
-            <div class="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-black/40 max-h-0 opacity-0 transition-all duration-500 ease-out group-hover:max-h-[28rem] group-hover:opacity-100">
-              <img src="https://images.unsplash.com/photo-1585388002316-7583d089d3d7?q=80&w=1974&auto=format&fit=crop" alt="Interface Design Preview" class="w-full h-88 object-cover">
+            <!-- Preview with Arrows -->
+            <div class="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-black/40 max-h-0 opacity-0 transition-all duration-500 ease-out group-hover:max-h-[40rem] group-hover:opacity-100 relative">
+              <div class="relative h-[32rem] w-full">
+                <!-- Dashboard V2 -->
+                <div id="dashboard-v2" class="absolute inset-0 flex items-center justify-center p-8 transition-opacity duration-300">
+                  <img 
+                    src="img/DashboardV2.png" 
+                    alt="Lumina Design Dashboard V2" 
+                    class="h-full w-auto object-contain"
+                  >
+                </div>
+                
+                <!-- Dashboard V3 -->
+                <div id="dashboard-v3" class="absolute inset-0 flex items-center justify-center p-8 opacity-0 transition-opacity duration-300">
+                  <img 
+                    src="img/DashboardV3.png" 
+                    alt="Lumina Design Dashboard V3" 
+                    class="h-full w-auto object-contain"
+                  >
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button onclick="showDashboard('v2')" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white/80 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 z-10">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="transform rotate-180">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button onclick="showDashboard('v3')" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white/80 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 z-10">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              
+              <script>
+                function showDashboard(version) {
+                  const v2 = document.getElementById('dashboard-v2');
+                  const v3 = document.getElementById('dashboard-v3');
+                  
+                  if (version === 'v2') {
+                    v2.classList.remove('opacity-0');
+                    v3.classList.add('opacity-0');
+                  } else {
+                    v2.classList.add('opacity-0');
+                    v3.classList.remove('opacity-0');
+                  }
+                }
+              </script>
             </div>
           </li>
 
